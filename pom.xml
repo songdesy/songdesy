@@ -30,12 +30,12 @@
         <repository>
             <id>releases</id>
             <name>Internal Release Repository</name>
-            <url>https://repo.maobc.com:9443/repository/maven-release/</url>
+            <url>http://maven.hawksu.com/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>Internal Snapshot Repository</name>
-            <url>https://repo.maobc.com:9443/repository/maven-snapshot/</url>
+            <url>http://maven.hawksu.com/repository/maven-snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -61,6 +61,18 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
                 <version>5.0.4.RELEASE</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>5.0.4.RELEASE</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.9.5</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -129,7 +141,11 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>3.5</version>
             </dependency>
-
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>4.0.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

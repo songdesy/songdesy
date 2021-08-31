@@ -30,12 +30,12 @@
         <repository>
             <id>releases</id>
             <name>Internal Release Repository</name>
-            <url>http://maven.hawksu.com/repository/maven-releases/</url>
+            <url>http://maven.hawksu.com:18081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>Internal Snapshot Repository</name>
-            <url>http://maven.hawksu.com/repository/maven-snapshot/</url>
+            <url>http://maven.hawksu.com:18081/repository/maven-snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
 

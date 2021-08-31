@@ -81,6 +81,7 @@ public class SqlParser {
 
     public String getSelectAll(String... fields) {
         if (null != fields && 0 != fields.length) {
+            Arrays.sort(fields);
             String colNames = (String)Arrays.stream(fields).map(this::getColName).collect(Collectors.joining(","));
             return String.join(" ", "SELECT", colNames, "FROM", this.table);
         } else {
@@ -105,9 +106,10 @@ public class SqlParser {
         if (null == criteria) {
             return this.getSelectAll(fields);
         } else {
-            String key = "S." + criteria.getSelectKey();
+            String selectField = this.getSelectAll(fields);
+            String key = "S." + criteria.getSelectKey()+selectField;
             return this.getSql(key, () -> {
-                return this.getSelectAll(fields) + criteria.toSelectSql(this.fieldColMap);
+                return selectField + criteria.toSelectSql(this.fieldColMap);
             });
         }
     }
